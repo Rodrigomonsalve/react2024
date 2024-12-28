@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        //DESTRUTURACIÓN ES EL PROCESO MEDIANTE EL CUAL PODEMOS USAR VALORES DE UN ARREGLO O ATRIBUTOS  DE UN OBJETO, POR SEPARADO. EN JAVA NO EXISTE COMO TAL. DEERÍAMOS TRABAJAR CON MÉTODOS GETTERS EN OBJETOS, Y CON POSISCIONES EN  ARREGLOS.
+
+      //SIN DESTRUCTURACION:
+      const arreglo=[1,2,3];
+
+      let uno=arreglo[0];
+      let dos=arreglo[1];
+      let tres=arreglo[2];
+      console.log(dos);
+
+      //CON DESTRUCTURACIÓN:
+        //Arreglos:
+      const [one,two,three]=arreglo;
+      console.log(one);
+      console.count(three);
+
+        //Objetos:
+        const paciente={
+            nombre:"Pedro",
+            apellido:"Lopez",
+            edad:"45"
+        }
+
+        const{nombre,apellido,edad}=paciente; // Los nuevos atributos se deben llamar igual al del objeto.
+        console.log(apellido);
+        console.log(edad);
+        
+
+
+       
+
+    </script>
+
+</html>

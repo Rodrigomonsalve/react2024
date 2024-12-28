@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        //UN CALLBACK ES UNA FUNCIÓN QUE INGRESA COMO PARÁMETRO A OTRA FUNCIÓN.
+        //SIRVEN PARA MANEJAR ASINCRONÍA.
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        //LA SIGUIENTE ES UNA FUNCION QUE RECIBE UN CALLBACK, DE FORMA BÁSICA:
+
+        function saludar(nombre,call){//A LA FUNCIÓN CALLBACK SE LE LLAMÓ "call" EN ESTE CASO.
+            console.log("Hola "+nombre);
+            call();
+        }
+
+        function despedirse(){
+            console.log("Adios");
+        }
+
+        saludar("Rodrigo", despedirse);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+       //LA SIGUIENTE ES OTRO EJEMPLO DE UNA FUNCION QUE RECIBE UN CALLBACK, DE FORMA BÁSICA: 
+
+        function procesarSincronamente(numero,callback) {
+
+            const resultado = numero*2;
+            callback(resultado);
+            
+        }
+
+        function result(resultado) {
+            console.log("Resultado sincrono:", resultado)
+            
+        }
+
+        //Al invocarse le pasamos una funcion:
+        procesarSincronamente(5,result);
+
+        //Al invocarse le pasamos la misma función, pero ahora creado dentro de la misma función(siempre como función flecha)
+        procesarSincronamente(5, (resultado)=>{
+            console.log("Resultado sincrono:", resultado)
+        });
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        //LA SIGUIENTE ES OTRO EJEMPLO DE UNA FUNCION QUE RECIBE UN CALLBACK, PERO SIMULANDO UNA ASÍNCRONÍA. LA FUNCION setTimeout SIRVE PARA ESTO.
+
+        function procesarAsincronamente(numero, callback) {
+
+            setTimeout(()=>{
+                const resultado=numero*2;
+                callback(resultado);
+            }, 20000);
+            
+        }
+
+        console.log("Inicio del proceso asíncrono");
+
+
+        procesarAsincronamente(5,(resultado)=>{
+            console.log("Resultado asíncrono: ", resultado);
+        });
+
+        //La propia funcion que recibe una funcion callback, puede formar parte de la función callback. Se le llama "callback hell".
+        procesarAsincronamente(5,(resultado)=>{
+            console.log("Resultado asíncrono: ", resultado);
+                procesarAsincronamente(5,(resultado)=>{
+                console.log("Resultado asíncrono: ", resultado);
+        })
+            
+        });
+
+        console.log("Sigo ejecutando otra tareas");
+
+
+
+
+
+
+    </script>
+
+</html>

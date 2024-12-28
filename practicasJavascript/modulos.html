@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+        <script src="js/modulos.js" type="module"></script>  <!--El llamado a los archivos js se recomienda que se coloquen al final del body, dado que js es código bloqueante. Si está muy pesado el html tardará en mostarse-->
+                                                            <!--Poner el atributo type="module" sirve para que, en este caso, modulos.js pueda funcionar como un módulo, es decir, que pueda importar o exportar clases, variables, objetos de otros archivos js. En caso de que tenga imports o exports, todo el código js dejará de fucionar sin el type="module"-->
+       
+        <script src="js/no-modules.js" nomodule> </script>  <!--Sirve hacer esto porque hay navegadores antiguos, como internet explorer, que no soportan el compportamiento de módulos y no cargarían js/modulos.js. En este caso cargaría js/no-modules.js-->
+    </body>
+    
+
+</html>

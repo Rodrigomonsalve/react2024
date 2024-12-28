@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        // FORMA DIFERENTE DE CREAR OBJETOS:
+
+
+        let nombre="Chicle";
+        let edad=5;
+
+        const perro={
+            nombre:nombre,
+            edad:edad,
+            ladrar:function(){
+                console.log("Guau,guau!")
+            }
+
+        }
+
+        perro.ladrar();
+        console.log("Nombre del perro: "+perro.nombre);
+
+        
+        //Hereda automáticamente los valores del objeto perro. Los atributos deben llamrase igual para lograrlo. Puedes usar todos o sólo algunos.
+        const dog={         
+           nombre,
+            edad,
+            ladrar(){                               //El método lo estás sobrescribiendo.
+                console.log("Guau,guau,guau!!!!!!")
+            }
+        }
+
+        dog.ladrar();
+        console.log("Nombre del dog: "+dog.edad);
+
+
+    </script>
+
+</html>

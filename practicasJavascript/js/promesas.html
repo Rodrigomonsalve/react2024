@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        // AL IGUAL QUE LAS CALLBACKS, SIRVEN PARA MANEJAR ASINCRONÍA
+        //UNA PROMESA ES UN OBJETO QUE REPRESENTA UN VALOR QUE PUEDE EXISTIR O NUNCA EXISTIR. SUSTITUYE A LAS CALLBACKS.
+        //EN ESTE CASO LO QUE PUEDE EXISTIR O NO ES LA IMPRESIÓN DE "Promesa resuelta exitosamente". 
+        // promiseInstance ES LA PROMESA (TAMBIÉN ES LA INSTANCIA DE PROMISE).
+        //resolve Y reject SON METODOS DEL OBJETO PROMISE.
+       const promiseInstance=new Promise((resolve,reject)=>{
+
+            const exito=true; //ESTO TÚ LO CAMBIAS MANUALMENTE
+            if(exito){
+                setTimeout(() => {
+                resolve("Promesa resuelta exitosamente");
+                }, 3000);
+            } else{
+                reject("Ocurrió un error cualquiera");
+            }
+            
+
+       });
+
+       //SI LA IMPRESIÓN DE "Promesa resuelta exitosamente" LLEGA A EXISTIR AUTOMÁTICAMENTE SE EJECUTA EL MÉTODO then. EL VALOR QUE SÍ LLEGÓ A EXISTIR SE GUARDA EN message.
+       //EN CASO DE QUE NO LLEGUE A EXISTIR EL VALOR, SE EJECUTA EL CATCH.
+       promiseInstance.then((message)=>console.log(message)).catch((error)=>console.log(error));
+
+
+       /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       //OTRA FORMA DE HACER LO MISMO:
+       
+       function promiseInstance(params) {
+        const exito=true; //ESTO TÚ LO CAMBIAS MANUALMENTE
+        
+        if(!exito){
+            return Promise.reject("Ocurrió un error cualquiera");
+        }
+
+        return new Promise((resolve,reject)=>{
+
+
+            setTimeout(() => {
+            resolve("Promesa resuelta exitosamente");
+            }, 3000)}
+        );
+    
+};
+
+
+promiseInstance
+.then((message)=>console.log(message))
+.then((message)=>console.console.log("Segundo " + message))   //ESTO SUSTITUYE UN CALLBACK HELL.
+.catch((error)=>console.log(error));
+
+    </script>
+
+</html>

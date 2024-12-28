@@ -1,0 +1,1 @@
+console.log("Se ejecuta en caso de que el navegador no soporte modulos");

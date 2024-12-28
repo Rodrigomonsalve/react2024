@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+        //LAS FUNCIONES EN JAVASCRIPT NO NECESITAN CREARSE NI INVOCARSE DENTRO DE UNA CLASE, A DIFERENCIA DE LOS MÉTODOS EN JAVA.
+        //POR ESO LAS FUNCIONES SE PUEDEN PRIMERO INVOCAR Y LUEGO CREAR. NO IMPORTA EL ORDEN(HOISTING). SIN EMBRAGO, EL ORDEN SÍ SE DEBE RESPETAR EN FUNCIONES EXPRESADAS O ANÓIMAS.
+        
+        //1)FUNCIONES DECLARADAS(NORMALES):
+        function prueba() { // NO DEBE ESPECIFICARSE EL TIPO DE DATO A RETORNAR.
+            
+            return 1;  //JAVASCRIPT SÍ PERMITE COLOCAR 2 RETURNS, PERO EL CÓDIGO SE DETENDRÁ EN EL PRIMERO.
+            console.log("Hola");
+            return 19;
+            
+        }
+
+        prueba();
+        console.log(prueba());
+ 
+        function parametros(name="Rodrigo", lastName="Monsalve") {  // EN JAVASCRIPT SE TE PERMITE CREAR VALORES POR DEFECTO, EN CASO DE SE INVOQUE SIN VALORES.
+
+            return `Hola ${name} ${lastName}`;
+            
+        }
+
+        console.log(parametros()); // EN JAVASCRIPT SE PERMITE INVOCAR FUNCIONES SIN PARAMETROS, AUNQUE LA FUNCION TE LOS EXIJA. DARÁ "undefined" EN LOS VALORES.
+        console.log(parametros("Carlos", "Esquivel"));
+
+        //2)FUNCIONES EXPRESADAS O ANÓNIMAS:
+        const funcionExpresada=function(){
+            console.log("Esta es una función expresada o anónima");
+        }
+
+        funcionExpresada();
+
+    </script>
+
+</html>

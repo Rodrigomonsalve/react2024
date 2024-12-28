@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+        //TIENEN LA ESTRUTURA DE UNA EXPRESIÓN LAMBDA EN JAVA.
+        //TRANSFORMACIÓN A UNA FUNCION FLECHA
+
+        //Funcion anonima tradicional:
+       const funcionAnonima=function(a,b){
+            
+            console.log(suma);
+       }
+
+
+       //Funcion anonima sin "function" y con =>
+       const funcionFlecha=(a,b)=>{
+            
+            console.log(a+b);
+       }
+
+
+       //Funcion flecha de solo una línea de código dentro. Puedes obviar las llaves.
+       const funcionFlecha2=(a,b)=>console.log(a+b);
+
+
+       //Funcion flecha con sólo un parámetro(numero). Puede no llevar paréntesis.
+       const funcionFlecha3=numero=>console.log(numero);
+
+
+       //Funcion flecha con return y una sola línea de código en su interior. Puedes obviar la palabra "return".
+       const funcionFlecha4=numero=>numero+1;
+
+
+       //Funcion flecha pura. Sin embargo, así no se puede ejecutar. Normalmente se usa como callback.
+       ()=>{
+        console.log("Funcion flecha");
+
+       }
+
+       //NO ES RECOMENDABLE CREAR FUNCIONES FLECHA DENTRO DE UN OBJETO.
+
+
+
+    </script>
+
+</html>

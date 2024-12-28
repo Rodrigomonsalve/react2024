@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+       
+       // EN JAVASCRIPT PUEDES CREAR OBJETOS PUROS(NO DEPENDEN DE UNA CLASE. NO LOS INSTANCIAS)
+       const rodri={
+        name:"Rodrigo",
+        age:35,
+        address:{                   //PUEDEN CONTENER DENTRO, A SU VEZ, OTRO OBJETO.
+            street:"Tepetlapa 1",
+            city:"Mexico City"
+        },
+
+        sayHi:function sayHi() { //TAMBIEN LES PUEDES CREAR FUNCIONES. YA SE LLAMAN MÉTODOS.
+            console.log("Hola");
+            
+        },
+
+        sayYourName:function sayYourName() {
+            console.log(`Hola! Soy ${this.name} y tengo ${this.age} años`); //this HACE REFERENCIA AL MISMO OBJETO.
+        }
+
+       }
+
+       console.log(rodri.sayHi());
+       console.log(rodri.sayYourName());
+       console.log(rodri.name); 
+       console.log(rodri[name]);      // OTRA FORMA DE ACCEDER A UN VALOR DE UN OBJETO. IMPORTANTE CONCERLO.
+    </script>
+
+</html>

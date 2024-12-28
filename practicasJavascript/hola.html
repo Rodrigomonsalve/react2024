@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+        //SCOPES:
+        var hola="Holi";  //VARIABLE GLOBAL. MISMO COMPORTAMIENTO DE UNA VARIABLE GLOBAL DE JAVA. SE CREAN CON "var". MUY DIFERENTE AL VAR DE JAVA.
+        let hola2="Holi"; //VARIABLE LOCAL. SE CREAN CON "let", SIN IMPORTAR SI ESTÁ DENTRO DE UN BLOQUE O NO.
+        console.log("var antes del bloque: "+hola) 
+        console.log("let antes del bloque: "+hola2)
+        if(true){
+            var hola="Hola";//MISMA VARIABLE GLOBAL DE ANTES
+            let hola2="Hola"; //VARIABLE LOCAL(DIFERENTE A hola2 DECLARADA ANTES)
+            const hola3="Hola"; // MISMO COMPORTAMIENTO QUE "FINAL" EN JAVA. SE CREAN CON "const". SIN EMBARGO, LOS OBJETOS Y ARREGLOS DECLARADOS CON "const" SÍ PUEDEN CAMBIAR, AL IGUAL QUE EN JAVA.
+            let comillas='Hola';
+            let comillas2=`Hola ${hola3} ${hola2}`; //"template literals" FORMA DE CONCATENAR VARIABLES(CON APOSTROFE). TAMBIEN SE PUEDE USAR LA FORMA TRADICIONAL CON EL SIMBOLO +.  Los template literals no existen en Java.
+            let number=1.1;  // TIPO DE DATO NUMÉRICO. ES EL ÚNICO TIPO DE DATO NUMÉRICO.
+
+
+            let booleano=true; // TIPO DE DATO BOOLEANO.
+            //OTRAS FORMAS DE CREAR VALORES BOOLEANOS(thuthty-falsy). EN JAVA NO EXISTE:
+            cosole.log(Boolean(0)); //=false
+            cosole.log(Boolean(1)); //=true
+            cosole.log(Boolean(-7)); //=true
+            cosole.log(Boolean("")); //=false
+            cosole.log(Boolean("x")); //=true
+
+            //UNDEFINED VS NULL VS NaN
+            let nully=null; //SE ESTABLECE UN VALOR NULL INTENCIONALMENTE.
+            let undefinedly; // NO SE LE ASIGNA VALOR. ARROJARÁ "undefined".
+            let numbery="Soy string"*3.7; //ARROJARÁ UN "not a number" NaN.
+
+            console.log(comillas2);
+            console.log("var dentro del bloque: "+hola);
+            console.log("let dentro del bloque: "+hola2)
+        }
+        console.log("var despues del bloque: "+hola);
+        console.log("let despues del bloque: "+hola2);
+    </script>
+
+</html>

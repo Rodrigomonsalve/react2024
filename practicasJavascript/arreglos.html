@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        // EN JAVASCRIPT LOS ARRAYS PUEDEN CRECER O DISMINUR SU TAMAÑO(NO MANEJAN MEMORIA ESTÁTICA) A DIFERENCIA DE JAVA.. NO ES NECESARIO DETERMINAR SU TAMAÑO DESDE EL PRINCIPIO.
+        
+        //DIFERENTES FORMAS DE CREAR UN ARREGLO:
+        const a=[]
+        const b=[1, true, "Hola"];
+        const c=new Array();  //FORMA ANTIGUA.
+        const d=Array.of(1,true,"Hola");
+
+        console.log(a);
+        console.log(b);
+        console.log(b.length);
+        console.log(b[1]);
+        console.log(d);
+
+        //FORMA DE ITERAR UN ARRAY:
+        b.forEach(function (element) {
+
+            console.log(`<li> ${element} </li>`)
+            
+        })
+
+    </script>
+
+</html>

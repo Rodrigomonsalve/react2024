@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+class PruebaGenerica{
+
+constructor(atributo3){
+    this.atributo3=atributo3;
+    this.atributo4=null;
+}
+
+metodo2(){
+    console.log("Se esta ejecutando el metodo2")
+}
+
+//EN  JAVASCRIPT TAMBIÉN EXISTEN LOS MÉTODOS SETTERS Y GETTERS, CON ALGUNAS DIFERENCIAS:
+set setAtributo4(atributo4){   
+this.atributo4=atributo4;
+}
+
+get getAtributo4(){
+return this.atributo4;
+}
+}
+
+const Pedro=new PruebaGenerica("Pedro");
+console.log(Pedro.getAtributo4); //EL MÉTODO GETTER SE EJECUTA COMO ATRIBUTO, NO COMO MÉTODO.
+Pedro.setAtributo4=32; //EL MÉTODO SETTER TAMIÉN SE EJECUTA COMO ATRIBUTO.
+console.log(Pedro.atributo4);
+console.log(Pedro.getAtributo4);
+
+
+
+
+
+        class Prueba extends PruebaGenerica{//PARA PODER HEREDEAR PRIMERO DEBE CREARSE LA CLASE PADRE. NO DEBE ESTAR CREADA DESPUÉS.
+
+             // let atributo1="Rodrigo";   //EN JAVASCRIPT NO SE DEFINEN ATRIBUTOS DE ESTA FORMA. SE DECLARAN DIRECTAMENTE EN EL CONSTRUCTOR
+            
+
+                 constructor(atributo1, atributo2, atributo3){  //EL CONSTRUCTOR DEBE LLEVAR LA PALABRA RESERVADA "constructor".
+                    super(atributo3);
+                    this.atributo1=atributo1;
+                    this.atributo2=atributo2;
+                 }
+
+                //function 
+                static metodo1() {      //EN JAVASCRIPT TAMBIÉN EXISTEN LOS MÉTODOS ESTÁTICOS.
+                    console.log("Ejecutando método");
+                }
+
+                 metodo2(){
+                    console.log("Ejecutando método2 en Prueba"); // ESTO ES LA SOBRESCRITURA.
+                }
+
+        }
+
+        
+        const rodrigo=new Prueba("Rodrigo", 35);
+        console.log(rodrigo);
+        console.log(rodrigo.metodo1);
+        rodrigo.metodo1();
+        Prueba.metodo1();
+
+
+
+
+    </script>
+
+</html>

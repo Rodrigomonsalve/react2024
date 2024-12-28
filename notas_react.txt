@@ -1,0 +1,31 @@
+EXISTEN VARIAS HERRAMIENTAS QUE NOS AYUDAN A CREAR LA ESTRUCTURA DE UNA APLICACIÓN EN REACT. LAS MAS CONOCIDA POR SER LA PRIMERA ES CREATE-REACT-APP.
+1)Create-React-App -> aquí vamos a trabajar
+2)Vite
+3)Gatsby
+4)Nextjs
+5)Parcel
+
+Sólo debes escoger una.
+Sin embargo, Create-React-App ya está cayendo en desuso y Vite está  ganando popularidad.
+Cada una de ellas tiene su forma particular de instalarse. Para saber cómo hacerlo (porque además puede variar con el tiempo) visita cada uno de sus sitios. Ahí vienen los comandos a ejecutar en la cmd.
+Para poder ejecutar los comandos, en todos los casos, necesitas tener instalado Nodejs.
+
+Para Create-React-App debes ejecutar los siguientes comandos:
+
+"C:\Program Files\nodejs\npx" --legacy-peer-deps create-react-app my-app
+"C:\Program Files\nodejs\npm" install --save-dev ajv@^7
+
+npm start   --> Para ejecutar la aplicación
+
+
+Los comandos que debes ejecutar para ejecutar, construir la aplicación y otros, están dentro del package.json. Por ejemplo, en el siguiente caso, para ejecutar la aplicación sería "npm run develop" o "npm run start".
+
+"scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+
+ Normalmente, el código principal (vistas) están dentro de la carpeta "src". 

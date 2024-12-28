@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+        
+    </body>
+    <script>
+       
+       //OPERADOR REST
+       //Significa que puedes ingresar el número de parámetros que desees. En Java el operador se llama varargs.
+       function resty(a,b, ...c) {
+            let sum=a+b;
+            c.forEach(function(e) {
+                sum+=e;
+                
+            })
+
+            return sum;
+       }
+
+       console.log(resty(1,2));
+       console.log(resty(1,2,5));
+       console.log(resty(1,2,5,8));
+       console.log(resty(1,2,5,8,3));
+
+       //OPERADOR SPREAD
+       //Sirve para poder unir 2 arreglos. En Java no hay operador spread.
+
+       const arreglo=[1,2,3];
+       const arreglo2=[4,5,6];
+
+       const arregloSpread=[...arreglo,...arreglo2];
+
+       console.log(arregloSpread);
+       
+
+       
+    </script>
+
+</html>
