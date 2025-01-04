@@ -21,6 +21,10 @@ metodo2(){
     console.log("Se esta ejecutando el metodo2")
 }
 
+metodo3(x){
+    console.log("Se esta ejecutando el metodo3 "+ x)
+}
+
 //EN  JAVASCRIPT TAMBIÉN EXISTEN LOS MÉTODOS SETTERS Y GETTERS, CON ALGUNAS DIFERENCIAS:
 set setAtributo4(atributo4){   
 this.atributo4=atributo4;
@@ -48,8 +52,10 @@ console.log(Pedro.getAtributo4);
 
                  constructor(atributo1, atributo2, atributo3){  //EL CONSTRUCTOR DEBE LLEVAR LA PALABRA RESERVADA "constructor".
                     super(atributo3);
+                    const atributo4=1;                           // SI NO USAS LA PALABRA this, ESA VARIABLE SÓLO SE PODRÁ USAR DENTRO DEL CONSTRUCTOR. LA PALABRA this SIGNIFICA QUE PERTENECEN A LA CLASE Y A CADA UNA DE SUS INSTANCIAS.
                     this.atributo1=atributo1;
                     this.atributo2=atributo2;
+                    this.metodo3(10000);
                  }
 
                 //function 

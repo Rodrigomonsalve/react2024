@@ -31,6 +31,34 @@
             
         })
 
+        //TAMBIÉN PODEMOS HACERLE COSAS (LO QUE QUERAMOS A CADA ELEMENTO DEL ARRAY). LOS RECORRE TODOS:
+        const e=[1, 2, 3];
+        console.log(e.map(num=>num*2)); // SE LOGRA CON EL METODO MAP. num ES CADA ELEMENTO DEL ARRAY. SE PODRÍA DECIR QUE ITERA EL ARREGLO. RECIBE COMO PARAMETRO UNA FUNCION EN LA QUE EXPRESAMOS LO QUE LE VAMOS A HACER A CADA ELEMENTO. EN REACT TAMBIEN PODEMOS ITERAR EL ARREGLO 
+
+        const f=[objeto=
+        {
+            id:1,
+            name:"Rodri"
+
+        },
+        {
+            id:2,
+            name:"Mimi"
+
+        },
+        {
+            id:3,
+            name:"Miri"
+
+        }
+    ];
+        console.log(f.map(obj=>obj))
+        console.log(f.objeto.id)
+        console.log(e.map((num, index)=>num*2,index));
+        
+    
+
+
     </script>
 
 </html>

@@ -10,17 +10,25 @@
     </body>
     <script>
 
+        //EN JAVA8 SÍ EXISTEN LAS PROMESAS,PERO ES UN TEMA TODAVÍA NO VISTO.
+
+        //PROMISE ES UNA CLASE QUE TIENE 2 MÉTODOS ESTATICOS: resolve, reject. AMBOS RECIBEN PARAMETROS
+
         // AL IGUAL QUE LAS CALLBACKS, SIRVEN PARA MANEJAR ASINCRONÍA
-        //UNA PROMESA ES UN OBJETO QUE REPRESENTA UN VALOR QUE PUEDE EXISTIR O NUNCA EXISTIR. SUSTITUYE A LAS CALLBACKS.
-        //EN ESTE CASO LO QUE PUEDE EXISTIR O NO ES LA IMPRESIÓN DE "Promesa resuelta exitosamente". 
+        //UNA PROMESA ES UN OBJETO QUE REPRESENTA EVENTUAL RESULTADO DE UNA OPERACIÓN ASÍNCRONA. SUSTITUYE A LAS CALLBACKS.
+        //SIRVEN PARA QUE EL CÓDIGO SIGA EJECUTÁNDOSE MIENTRAS SE ESPERA EL RESULTADO DE LA PROMESA.
+        //TRY-CATCH Y CONDICIONALES SON SÍNCRONOS(BLOQUEAN EL CÓDIGO HASTA QUE TERMINE LA OPERACIÓN)
+        //EN ESTE CASO LO QUE PUEDE EXISTIR O NO ES LA IMPRESIÓN DE "Promesa resuelta exitosamente". OPERACIONES QUE LLEVAN TIEMPO, COMO SOLICITUDES HTTP, LECTURA DE ARCHIVOS O TEMPORIZADORES.
         // promiseInstance ES LA PROMESA (TAMBIÉN ES LA INSTANCIA DE PROMISE).
         //resolve Y reject SON METODOS DEL OBJETO PROMISE.
+
+        
        const promiseInstance=new Promise((resolve,reject)=>{
 
             const exito=true; //ESTO TÚ LO CAMBIAS MANUALMENTE
             if(exito){
                 setTimeout(() => {
-                resolve("Promesa resuelta exitosamente");
+                resolve("Promesa resuelta exitosamente") 
                 }, 3000);
             } else{
                 reject("Ocurrió un error cualquiera");
@@ -31,6 +39,7 @@
 
        //SI LA IMPRESIÓN DE "Promesa resuelta exitosamente" LLEGA A EXISTIR AUTOMÁTICAMENTE SE EJECUTA EL MÉTODO then. EL VALOR QUE SÍ LLEGÓ A EXISTIR SE GUARDA EN message.
        //EN CASO DE QUE NO LLEGUE A EXISTIR EL VALOR, SE EJECUTA EL CATCH.
+       //AL EJECUTAR promiseInstance SE PERMITE QUE  EL DEMÁS CÓDIGO SIGA EJECUTÁNDOSE
        promiseInstance.then((message)=>console.log(message)).catch((error)=>console.log(error));
 
 
@@ -55,6 +64,9 @@
 };
 
 
+//CADA .then SIGNIFICA EL ORDEN EN QUE DEBEN EJECUTARSE LAS OPERACIONES. HASTA QUE NO FINALICE UNO NO SE EJECUTARÁ EL SIGUIENTE.
+//SIN EMBARGO, ESO NO SIGNIFICA QUE EL FLUJO PRINCIPAL (HILO  PRINCIPAL) DEL CÓDIGO SE INTERRUMPA(LO QUE ESTA DESPUÉS LA INVOCACIÓN A promiseIntance). ESA ES LA FINALIDAD DE LA ASINCRONIA.
+//LOS then SON SUSTITUIDOS EN FUNCIONES ASINCRONAS CON LA PALABRA await.
 promiseInstance
 .then((message)=>console.log(message))
 .then((message)=>console.console.log("Segundo " + message))   //ESTO SUSTITUYE UN CALLBACK HELL.

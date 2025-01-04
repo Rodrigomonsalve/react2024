@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        //ES UN TIPO DE DATO QUE PARACE ARREGLO QUE SÓLO ACEPTA VALORES ÚNICOS.  NO REPETIDOS
+        // AUNQUE TÚ LE INGRESES VALORES REPETIDOS, LOS ELIMINARÁ
+
+        const set=new Set();
+        const set2=new Set([1, 2, 2, 3, {}, true,true, "Hola", "Hola"])
+        console.log(set);
+        console.log(set2);
+
+        set2.add(4);
+        console.log(set2);
+
+        //FORMA DE IMPRIMIR UN SOLO VALOR DE UN SET
+        //LO TENEMOS QUE CONVERTIR PRIMERO A ARRAY.
+        const arr=Array.from(set2)
+        console.log(arr[1]);
+
+        //FORMA DE CONVERTIR UN ARRAY A SET
+        const arr2=[3, 4, 5];
+        const set3=new Set(arr2);
+        console.log(set3);
+        
+
+    </script>
+
+</html>

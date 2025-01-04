@@ -29,3 +29,13 @@ Los comandos que debes ejecutar para ejecutar, construir la aplicación y otros,
   },
 
  Normalmente, el código principal (vistas) están dentro de la carpeta "src". 
+
+npm cache verify ---> Comando cuando hay problemas de conectividad
+
+CUANDO INSTALES UNA DEPENDENCIA LO DEBES HACER EJECUTANDO npm, ESTANDO DENTRO DEL PROYECTO. TU ARCHIVO package.json SE ACTUALIZARÁ CON LA NUEVA DEPENDENCIA.
+SASS LO PUEDES INSTALAR DE FORMA GLOBAL O PARA TU POYECTO EN PARTICULAR.
+npm install sass ---> para instalar sass de forma global(C:\Users\dell\Desktop\node_modules\sass)
+
+https://styled-components.com/
+npm install styled-components
+styled-components-snippets--->Plugin recomendado

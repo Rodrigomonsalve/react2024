@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+        //UN MAP ES UN TIPO DE DATO QUE PARECE ARREGLO, PERO EN LOS MAPAS CADA VALOR TIENE UNA CLAVE
+
+        const mapa=new Map();
+        mapa.set("nombre", "Rodrigo");
+        mapa.set("edad", 35);
+
+//ADQUIERE ESTA FORMA: 
+/*
+0
+: 
+{"nombre" => "Rodrigo"}
+1
+: 
+{"edad" => 35}*/
+
+        console.log(mapa);
+        console.log(mapa.has("nombre"));//DEVUELVE TRUE
+        console.log(mapa.has("correo"));//DEVUELVE FALSE
+        console.log(mapa.get("edad"));//OBTIENE EL VALOR
+
+
+        
+
+    </script>
+
+</html>

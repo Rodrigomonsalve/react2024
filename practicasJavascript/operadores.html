@@ -10,8 +10,25 @@
         
     </body>
     <script>
-       //Aritméticos, incremento(i+=3), decremento, operador unario(i++, i--) y lógicos SON IGUAL QUE EN JAVA.
+       //Aritméticos, incremento(i+=3), decremento, operador unario(i++, i--) SON IGUAL QUE EN JAVA.
        // El único que no existe en Java es === que valida valor y tipo de dato(OPERADOR "ESTRICTAMENTE IGUAL").
+
+       //LOS OPERADORES LÓGICOS SÍ CAMBBIAN:
+       //A diferencia de Java, && en Javascript no evalúa si las 2 variables son falsas o verdaderas. 
+       //Evalúa de izquierda a derecha; si la primera es verdadera evalúa la segunda; si la segunda es verdadera devuelve la segunda SIN IMPORTAR SI ES BOOLLEANO O NO.
+       //Si la primera es falsa, devuelve la primera. Si la primera no es boolean devuelve la segunda.
+       //En Java ambas deben ser booleanas y devuelve un booleano.Es mas sencillo.
+
+       //A esto se llama operador de corto circuito.
+
+       let logico=true;
+       let logico2=false;
+       let numero=2;
+
+       console.log(logico2&&numero);
+       console.log(numero&&logico2);
+
+
 
 
        

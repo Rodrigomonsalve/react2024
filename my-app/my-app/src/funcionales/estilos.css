@@ -1,0 +1,10 @@
+.bg-sass {
+  background-color: #bf4080;
+  -webkit-transition: background-color .5s ease-in-out;
+  transition: background-color .5s ease-in-out;
+}
+
+.bg-sass:hover {
+  background-color: #bf408080;
+}
+/*# sourceMappingURL=estilos.css.map */

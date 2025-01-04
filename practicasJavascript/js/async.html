@@ -10,7 +10,35 @@
     </body>
     <script>
 
-      //LAS FUNCIONES ASINCRONAS NO SUSTITUYEN A LAS PROMESAS.
+    //LAS FUNCIONES ASINCRONAS NO SUSTITUYEN A LAS PROMESAS.
+    //LAS FUNCIONES ASINCRONAS SIRVEN PARA DOTAR DE MEJOR LEGIBILIDAD A LA EJECUCIÓN DE LAS PROMESAS.
+
+
+    function PromesaInsatance(params) {
+
+        let exito=params;
+
+        if(!exito){
+           return Promise.reject("Ejecución no realizada");
+        }else{
+            return new Promise(
+                setTimeout(()=>{
+                    resolve("Ejecución realizada")
+                },1000)
+            )
+        }
+        
+    }
+
+    async function FuncionAsincrona () {
+
+        let variable1=await PromesaInsatance(true);  //LO UNICO QUE HAY QUE NOTAR ES QUE LA EJECUCIÓN DE LAS PROMESAS DE ESTA FORMA, SUSTITUYE A LOS .then. (BUSCAR INFORMACIÓN EN LA SECCION DE PROMESAS)
+
+        let variable2=await PromesaInsatance(false);
+        
+    }
+
+    FuncionAsincrona();
 
 
 

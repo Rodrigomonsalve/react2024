@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hola
+        </title>
+    </head>
+    <body>
+        Hola
+    </body>
+    <script>
+
+        //LA PALABRA RESERVADA this SIEMPRE HACE REFERECIA A LOS ELEMENTOS (variables, funciones, arreglos, objetos,  etc) DENTRO DEL CONTEXTO RESPECTO AL CUAL SE ¡¡INVOQUEN!! (BLOQUE DE CÓDIGO COMO FUNCIONES, CONSTRUCTORES O CLASES).
+        //¡LOS MANEJADORES DE EVENTOS COMO onclick HACEN PERDER EL CONTEXTO DE LA FUNCIÓN QUE INVOCAN!
+        //this FUNCIONA DIFERENTE CON FUNCIONES FLECHA. SI USAS this DENTRO DE UNA FUNCION FLECHA HAREMOS REFERENCIA A LOS COMPONENTES DEL CONTEXTO DENTRO DEL CUAL SE ENCUENTRE EL CONTEXTO EN DONDE SE USE this(UN CONTEXTO SUPERIOR->UNA FUNCION DENTRO DE UNA FUNCION)
+        //SI NO USAS LA PALABRA this EN UN CONSTRUCTOR, ESA VARIABLE SÓLO SE PODRÁ USAR DENTRO DEL CONSTRUCTOR.
+        //NO FUNCIONA IGUAL QUE EN JAVA.AHÍ LA PALABRA RESERVADA this, SIMPLEMENTE HACE REFERENCIA A LAS VARIABLES DE LA CLASE EN LAS QUE SE USE this.
+
+
+        this.elemento=1;
+        //var elemento=2;
+
+        function Contexto1() {
+            let elemento=100; 
+            console.log(elemento); //DA 100 SI SE EJECUTA COMO ABAJO
+            console.log(this.elemento); //DA 1 SI SE EJECUTA COMO ABAJO
+            
+        }
+
+        Contexto1(); //SI SE EJECUTA ASÍ, this HARA REFERENCIA A 1, PORQUE NO SE INVOCÓ RESPECTO A ALGÚN CONTEXTO ESPECÍFICO.
+        this.Contexto1();//SI SE EJECUTA ASÍ, this TAMBIEN HARA REFERENCIA A 1, PORQUE SE INVOCÓ RESPECTO AL  CONTEXTO GLOBAL.
+
+        function ContextoX() {
+            let elemento=100; 
+            console.log(elemento); //DA 100 SI SE EJECUTA COMO ABAJO
+            console.log(this.elemento+1); //DA 1 SI SE EJECUTA COMO ABAJO
+            
+        }
+
+        const Contexto2={
+            elemento:3,
+            contexto1:function(){
+                console.log(this.elemento);
+            }
+        }
+
+        Contexto2.contexto1();//SI SE EJECUTA ASÍ, this HARA REFERENCIA A 3, PORQUE SE INVOCÓ RESPECTO AL CONNTEXTO Contexto2.
+        this.Contexto2.contexto1();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //SI QUEREMOS USAR EL VALOR DE ALGÚN ELEMENTO DE UN CONTEXTO, EN OTRO CONTEXTO, DEBEMOS ENLAZARLOS. ESTO NO EXISTE EN JAVA.
+
+        const Contexto3={
+            elemento:3,
+            contexto1:function(){
+                console.log(this.elemento);
+            }
+        }
+        Contexto3.contexto1(); 
+
+
+
+        const Contexto4={
+            //elemento:3,
+            contexto1:Contexto3.contexto1()
+            }
+        Contexto4.contexto1(); //DARÍA undefined porque no hay ningun atributo "elemento".
+
+
+
+        const Contexto5={
+            //elemento:3,
+            contexto1:Contexto3.contexto1.bind(this)
+            }
+        Contexto5.contexto1(); //DARÍA 1 porque ya estamos vinculandolo con la variable "elemento"  global.
+
+
+        
+
+
+        
+
+    </script>
+
+</html>

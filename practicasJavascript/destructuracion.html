@@ -36,7 +36,27 @@
         const{nombre,apellido,edad}=paciente; // Los nuevos atributos se deben llamar igual al del objeto.
         console.log(apellido);
         console.log(edad);
+
+        function Destruturacion1 ({nombre}) {
+
+            console.log("Destructuración de paciente directamente en parametros"+{nombre});
+        }
+
+        Destruturacion1();
+
+        //TAMBIEN SE PUEDE DESTRUCTURAR UNA FUNCION QUE DEVUELVA UN ARREGLO. IMPORTANTE PARA REACT
         
+        function Destruturacion (numero) {
+
+            let uno=arreglo[numero, funcion];
+
+            return uno;
+        }
+
+        const [numero, setNumero]=Destruturacion(0);
+
+
+
 
 
        
