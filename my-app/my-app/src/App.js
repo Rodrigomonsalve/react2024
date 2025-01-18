@@ -23,6 +23,9 @@ import Referencias from './funcionales/referencias';
 import Formularios from './funcionales/formularios';
 import Estilos from './funcionales/estilos';
 import ComponenteEstilizado from './funcionales/styledComponent';
+import SelectsAnidados from './funcionales/selectsAnidados';
+import ValidacionFormuario from './funcionales/validacionFormulario';
+import Modals  from './funcionales/modalsChildren';
 
 
 let nombre="Rodrigo";{/**VARIABLE A INTERPOLAR */}
@@ -75,6 +78,9 @@ function App() {
           <Formularios></Formularios>
           <Estilos></Estilos>
           <ComponenteEstilizado></ComponenteEstilizado>
+          <SelectsAnidados></SelectsAnidados>
+          <ValidacionFormuario></ValidacionFormuario>
+          <Modals></Modals>
           </section>
       </header>
     </div>

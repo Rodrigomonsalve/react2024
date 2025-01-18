@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 
 export default function UsoDeUseState(props) {
 
-    const [contador,setContador]=useState(0); //Esto es un hook. useState es una funcion que devuelve un arreglo que, a su vez, recibe una variable y una funcion que afecta a esa variable.En este caso estamos destructurando la
+    const [contador,setContador]=useState(0); //Esto es un hook. useState es una funcion que devuelve un arreglo que, a su vez, recibe una variable y una funcion que afecta a esa variable.En este caso estamos destructurandola
                                                 //YA NO USAMOS EL PROPERTY INITIALIZAZER, NI CONSTRUCTOR NI LA FUNCION SETSTATE.
     const sumar=()=>{setContador(contador+1)};
     const restar=()=>{setContador(contador-1)};

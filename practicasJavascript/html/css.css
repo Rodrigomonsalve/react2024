@@ -1,0 +1,51 @@
+/*HAY DIFERENTES TIPOS DE SELECTORES PRINCIPALES:*/
+/*1)De etiqueta:*/
+/*2)De id: se usa # */
+/*3)De clase: . */
+/*4)Pseudoclases: : */
+/*5)Selectores especiales: [] */
+
+
+
+/*SELECTORES DE ETIQUETA*/
+body{
+    background-color: #00F;
+}
+
+header{
+    background-color: rgb(251, 9, 9);
+}
+
+li{
+
+    background-color: rebeccapurple;
+    display: inline;  /*PARA ROMPER EL MODELO "BLOCK" DEL CONTENEDOR Y PROVOCAR QUE YA NO HAYA SALTOS DE LINEA*/
+}
+
+section{
+    background-color: white;
+    margin-left: 340px;  /*DISTANCIA DEL CONTENEDOR DESDE EL LADO IZQUIERDO. ENTRE MAS GRANDE, MAS PEQUEÑO SE HACE Y SE MUEVE MAS HACIA LA DERECHA*/
+    margin-top: 20px;  /*DISTANCIA DEL CONTENEDOR DESDE ARRIBA. ENTRE MAS GRANDE, MAS PEQUEÑO SE HACE Y SE MUEVE MAS HACIA ABAJO*/
+    padding-left: 30px; /*DISTANCIA DEL CONTENIDO DEL CONTENEDOR HACIA EL BORDE IZQUIERDO DE ÉSTE. ENTRE MAS GRANDE, MAS ESPACIO DEL LADO IZQUIERDO DENTRO DEL CONTENEDOR HAY*/
+    padding-top: 30px;  /*DISTANCIA DEL CONTENIDO DEL CONTENEDOR HACIA EL BORDE SUPERIOR DE ÉSTE. ENTRE MAS GRANDE, MAS ESPACIO ARRIBA DENTRO DEL CONTENEDOR HAY*/
+
+}
+
+
+
+/*SELECTOR ID*/
+#cabeceraWeb{
+    background-color: yellow;
+}
+
+ 
+#menuLateral{
+    float:left;                     /*ES COMO SI CONTENEDOR NO ESTUVIERA Y FLOTARA SOBRE OTRO CONTENEDOR*/
+    height:2000px;                  /*TAMAÑO DEL CONTENEDOR HACIA ABAJO */
+    background-color: hotpink;
+
+}
+
+
+
+

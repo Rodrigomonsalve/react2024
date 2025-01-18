@@ -1,0 +1,114 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        
+        <title>Pagina de estudio</title> 
+
+        <!--FORMAS DE AGREGAR ESTILOS:-->
+
+        <link rel="stylesheet" href="css.css"/> <!--1)SE AGREGA UNA HOJA DE ESTILOS-->
+
+        <!--2)MEDIANTE LA ETIQUETA <style>. ESTE ESTILO PREVALECE SOBRE LA HOJA DE ESTILOS EN CASO DE QUE ENTREN EN CONFLICTO EN ALGUNA ETIUETA-->
+        <style>
+            #menuLateral{
+                background-color: red;
+            }
+        </style>
+
+        <!--3)ESTILO EN LINEA: PREVALECE SOBRE LAS OTRAS 2. SE VE DENTRO DE LA ETIQUETA <li>-->
+        <!--4) TAMBIEN SE PUEDE AGREGAR COMO METODO, PERO SE DEBE HACER YA CON CÓDIGO JAVASCRIPT:-->
+        <!--etiqueta.style.background="#FFDDDD";-->
+    </head>
+    
+    <body >
+        <!--CADA QUE USAS UNA ETQIUETA HTML, ESTÁS CREANDO UNA CAJA QUE OCUPA TODO EL ANCHO DE LA PAGINA, Y TIENEN UN SALTO DE LINEA: SE VAN COLOCANDO UNO DEBAJO DE LA OTRA. SON ETIQUETAS DE TIPO BLOCK, NO DE TIPO INLINE-->
+        <!--PARA CONVERTIR LAS ETIQUETAS A TIPO INLINE, SE USA CSS: display: inline;-->
+        <!--PARA ROMPER EL FLUJO "BLOCK" SE USA TAMBIEN CSS:f loat:left; PERO PUEDEN PARECER QUE QUEDAN ENCIMADAS LAS ETIQUETAS-->
+        <header id="cabeceraWeb"> <!--Se usa selector id de CSS-->
+            <h1>Esta es la cabecera</h1> 
+        </header>
+
+        <nav>
+            <ol>
+                <li>Opcion1</li>
+                <li style="background-color: green;">Opcion2</li> <!--Estilo en linea-->
+                <li>Opcion3</li>
+                <li>Opcion4</li>
+            </ol>
+        </nav>
+
+        <aside id="menuLateral">
+            <blockquote>Primer elemento del menu lateral</blockquote>
+            <blockquote>Segundo elemento del menu lateral</blockquote>
+        </aside>
+
+        
+        <section>
+            <article>                               
+                <header>                            
+                    <hgroup>                       
+                        <h2>Titulo de la noticia 1</h2>
+                        <h3>Subitulo de la noticia 1</h3>
+                    </hgroup>
+                </header>
+                <figure>                               
+                    <img src="../Imagenes/IMG_20221203_174204133 (3).jpg"/>
+                    <figcaption>
+                        Mi foto                          
+                    </figcaption>
+                </figure>                                   
+                <p><mark>Noticia 1</mark></p>                            
+                <p><em>Contenido de la Noticia 1</em></p>                
+                <p><strong> Fin de la Noticia 1</strong></p>             
+                <footer>
+                   <p><small>Derechos reservados</small></p>             
+                </footer>
+            </article>
+
+            </article>
+                 <header>
+                    <hgroup>
+                        <h2><cite>Titulo de la noticia </cite></h2>      
+                        <h3>Subitulo de la noticia 1</h3>
+                        <h3><address>Contacto:55783883993</address></h3>    
+                        <time datetime="2025/01/05" pubtime>Noticia publicada el 05/01/2024</time> 
+                    </hgroup>
+                </header>
+                <p>Noticia 2</p>
+                <p>Contenido de la Noticia 2</p>
+                <p>Fin de la Noticia 2</p>
+                <footer>
+                    <p>Comentarios</p>
+                 </footer>
+            </article>
+
+            </article>
+                <header>
+                    <hgroup>
+                        <h2>Titulo de la noticia 3</h2>
+                        <h3>Subitulo de la noticia 3</h3>
+                    </hgroup>
+                </header>
+                <p>Noticia 3</p>
+                <p>Contenido de la Noticia 3</p>
+                <p>Fin de la Noticia 3</p>
+                <footer>
+                    <p>Comentarios</p>
+                 </footer>
+             </article>
+        </section>
+
+        <footer>
+            Derechos reservados
+        </footer>
+
+    </body>
+
+
+
+</html>

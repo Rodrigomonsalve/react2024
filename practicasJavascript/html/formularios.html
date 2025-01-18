@@ -1,0 +1,239 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        
+        <title>Eventos</title> 
+
+
+        <link rel="stylesheet" href="css.css"/> 
+
+        
+    </head>
+    
+    <body >
+       <!--EL ATRIBUTO id DEBE SER ÚNICO EN TODO EL DOCUMENTO Y SIRVE PARA CREAR ESTILOS CSS, IDENTIFICAR ELEMENTOS EN JAVASCRIPT, PRICIPALMENTE -->
+       <!--EN EL CODIGO HTML PONES LAS CONDICIONES(max,maxlength,pattern,step,required,etc) Y CON CODIGO JAVASCRIPT PERSONALIZAS ESTAS VALIDACIONES(API FORM), COMO SE VE LINEAS MAS ADELANTE-->
+    <section>
+        <form name="miFormulario" id="idMiFormulario" method="get" autocomplete="off"> <!--autocomplete sirve para que no se permita el autocompletado del input-->
+        <input type="text" name="texto"id="idTexto"/>       <!--https://...?texto=Hola--><!--PARA QUE ALGO VIAJE POR LA URL, DEBEMOS USAR EL ATRIBUTO name DEL input(ES INDISPENSABLE), SI USAMOS EL METODO GET EN EL FORM. NUNCA DEBEN ESTAR DUPLICADOS-->
+        <input type="search" name="texto1"id="idTexto" multiple/>  <!--multiple ES PARA PODER ENVIAR UNA MULTIPLICIDAD DE INFORMACIÓN, POR EL MISMO CAMPO-->
+        <input type="number" name="edad"id="idEdad" min="1" max="99" step="5" placeholder="Sólo mayores de 0 años"/><!--PODEMOS ESPECIFICAR EL RANGO NUMERICO, ASÍ COMO LOS SALTOS ADMITIDOS(step)..EN ESTE CASO, DESDE EL 1 DEBEN PASAR 5 NUMEROS Y SOLO SE ADMITIRÁ EL 6, Y ASÍ SUCESIVAMENTE--><!--placehoder es para colocar un valor por defecto dentro del campo-->
+        <input type="range" name="texto2"id="idTexto" min="1" max="100" step="5"/>      <!---BARRA HORIZONTAL NUMERICA-->
+        <input type="date" name="fecha"id="idFecha" autofocus/> <!--autofocused ES PARA QUE ESE CAMPO APAREZCA SELECCIONADO POR DEFAULT-->
+        <input type="month" name="mes"id="idMes" required/> <!--required ES PARA CREAR CAMPOS OBLIGATORIOS-->
+        <input type="time" name="hora"id="idHora"/> 
+        
+
+        <button type="submit">Enviar</button>
+    </section>
+
+        </form>
+
+        <!--LISTAS: -->
+        <form name="registro" method="get">
+            <datalist id="informacion">
+                <option value="787487894" label="Telefono1"></option>
+                <option value="478978949" label="Telefono2"></option>
+                <option value="378978937" label="Telefono3"></option>
+            </datalist>
+            Telefono:<input type="tel" name="telefono" id="telefono" list="informacion">
+
+        </form>
+
+        
+        <label for="selection">Estados</label>
+            <select name="select" id="selection" onchange="selector(event)">
+                <option >Ciudad de Mexico</option>
+                <option >Estado de Mexico</option>
+            </select>
+        
+
+<!--HAY 2 FORMAS DE CREAR UN FORMULARIO:-->
+<!--1)Tablas-->
+<!--2)Formulario con labels-->
+
+<!--1)Tablas:-->
+        <form name="registros" method="get">
+
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="nombre" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td>Apellido</td>
+                    <td><input type="text" name="apellido" id="apellido"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="registrar" value="Enviar"></td>
+                </tr>
+            </table>
+
+        </form>
+
+<!--2)Formulario con labels. Es lo mas usado:--->
+        <form name="registros2" method="get">
+                    <label for="nombre">Nombre</label>  <!--El atributo "for" sirve para enlazar la etiqueta label con un input. Toma el valor del "id" del input. Mejora la experiencia del usuario, al marcarse el input después de haber dado click en la etiqueta.-->
+                    <input type="text" name="nombre" id="nombre">
+                    <br/>                               <!--br sirve para insertar -->
+                
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <br/>
+                    <input type="submit" id="registrar" value="Enviar">
+            
+        </form>
+
+
+        <!--formularios.html?usuario=jua&mail=correo%40correo.com&edad=30-->
+        <form name="registros_usuarios" method="get">
+
+            <table>
+                <tr>
+                    <td>Usuario:</td>
+                    <td><input pattern="[A-Za-z]{3}" type="text" name="usuario" id="usuario" maxlength="10" required></td><!--el atributo pattern sirve para limitar los caracteres que van a inngresar, incluso su numero-->
+                </tr>                                                                                                      <!--El atributo required es para que el campo sea obligatorio--><!--maxlength es para limitar el numero maximo de CARACTERES admitidos en el campo.-->
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="mail" id="mail" required></td>
+                </tr>
+                <tr>
+                    <td>Edad:</td>
+                    <td><input type="range" name="edad" id="edad" min="0" max="120"  value="30" step="10"></td><!--max es para limitar el numero mas alto. NO ES PARA LIMITAR LOS CARACTERES.-->
+                </tr>
+                <tr>
+                    <td><output id="rango">0 a 30</output></td>        <!--LA ETIQUETA OUTPUT SIRVE PARA MOSTRAR UNA SALIDA, GENERALMENTE DE UNA OPERACIÓN EN JAVASCRIPT-->
+                </tr>
+
+                <tr>
+                    <td><input type="submit" id="registrarForm" value="EnviarForm"></td>
+                </tr>
+            </table>
+            
+
+        </form>
+
+        <script>
+
+            var edad;
+
+            function selector(event) {
+                console.log("Valor del select "+event.target.value);
+                
+            }
+
+            function comenzar() {
+
+                var nombre=document.getElementById("nombre");
+                var apellido=document.getElementById("apellido");
+
+                nombre.addEventListener("input",validar,false);
+                apellido.addEventListener("input",validar,false);
+
+                validar();
+                
+            }
+
+            function validar() {
+                if(nombre.value=="" && apellido.value==""){
+                        
+                    nombre.setCustomValidity("Introduce nombre o apellido");  //setCustomValidity permite establecer un mensaje de error personalizado.
+                    nombre.style.background="#FFDDDD";
+                    apellido.style.background="#FFDDDD";
+
+                }else{
+                    nombre.setCustomValidity("");
+
+                    nombre.style.background="#FFFFFF";
+                    apellido.style.background="#FFFFFF";
+                }
+
+            }
+
+            function output() {
+                edad=document.getElementById("edad");
+                edad.addEventListener("change",cambia_rango,false);
+
+                //document.registros_usuarios.addEventListener("invalid",validar,true); //ES UNA FORMA DE HACER LO MISMO QUE LAS 2 SIGUIENTES LINEAS, PERO EL NAVEGADOR PUEDE QUE YA NO  SOPORTE ESTA FORMA.
+                const forms=document.forms["registros_usuarios"];           //forms sirve para acceder a etiquetas forms solamente. Tambien se puede acceder a ellas con getElementById
+                forms.addEventListener("invalid",validar,true);             //"invalid" es un evento que se diapara cuando falla la validación en algun campo del formulario, AL ENVIARSE. Lo dispara el formulario, no el campo(input, select o textarea).
+
+                document.getElementById("registrarForm").addEventListener("click",enviar,false);
+
+                document.registros_usuarios.addEventListener("input",validarTiempoReal,false);   //input es un evento que se produce cuando vamos ingresando caracteres en un campo.
+               
+            }
+
+            //ESTO NO ES VALIDACIÓN DE FORMULARIO:
+            function cambia_rango() {
+
+                var salida=document.getElementById("rango");
+                var calculo=edad.value-30;        //Recordar que podemos acceder así al valor de una etiqueta.
+
+                if(calculo<30){
+                    calculo=0;
+
+                    edad.value=30;
+                }
+
+                salida.innerHTML=calculo+" a "+edad.value;  //innerHTML es una propiedad que nos ayuda a modificar el DOM. Inserta valores dentro de una etiqueta y modifica los ya existentes.
+
+                
+            }
+
+            function validar(error) {  //Hay que recordar que podemos pasar el evento a la funcion que desencadena. En este caso se llama "error", pero podria llamarse "evento" o "e"
+ 
+                var elemento=error.target;
+                console.log("error: "+error);
+                console.log("elemento: "+elemento);
+                elemento.style.background="#FFDDDD";  //AL TRATAR DE ENVIAR EL FORMULARIO, EN CASO DE ERROR, EL CAMPO SE PONDRÁ ROJO. 
+                
+            }
+
+            function enviar() {
+
+                var cuadro_usuario=document.getElementById("usuario");
+
+                var correcto=document.registros_usuarios.checkValidity(); //checkValidity devuelve un booleano. True si la validación de los campos DEL FORMULARIO es correcta.
+
+                if(correcto==true){
+                    document.registros_usuarios.submit(); 
+                    console.log("Antes de entrar al else if");
+                    console.log(cuadro_usuario.validity.valueMissing);         //submit es un metodo para enviar información de un formulario, desde Javascript. Se aplica sobre el formulario.
+                }else if(cuadro_usuario.validity.valueMissing==true || cuadro_usuario.validity.patternMismatch==true){
+                    console.log("Enrtrando al else if");
+                    console.log(cuadro_usuario.validity.valueMissing);
+                    alert("El usuario NO puede estar vacio y debe tener sólo 3 letras");
+
+                }
+                
+            }
+
+            function validarTiempoReal(error) {  //Hay que recordar que podemos pasar el evento a la funcion que desencadena. En este caso se llama "error", pero podria llamarse "evento" o "e"
+
+                var elemento=error.target;
+
+                if(elemento.validity.valid==true){   //validity nos ayuda a saber si un campo cumple con las validaciones correspondientes(las que hayamos puesto en las etiquetas input). Incluye: valid(validaciones de la etiqueta input), valueMissing(campo vacio), patternMismatch(coincidencia con el atributo pattern del input),typeMismatch, tooLong, tooShort, etc. Estos diferentes atributos nos ayudan más que checkValidity(), pues nos permiten ser mas grannulares.
+                    elemento.style.background="#FFFFFF"
+                }else{
+                    elemento.style.background="#00F"
+                }
+                
+            }
+
+           // window.addEventListener("load",comenzar,false);
+            window.addEventListener("load",output,false);
+
+        </script>
+    </body>
+
+    
+
+
+
+</html>

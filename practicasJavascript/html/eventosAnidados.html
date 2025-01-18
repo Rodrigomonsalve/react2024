@@ -1,0 +1,46 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        
+        <title>Eventos</title> 
+
+
+        <link rel="stylesheet" href="css.css"/> 
+
+        
+    </head>
+    
+    <body >
+       <p><img src="../Imagenes/IMG_20221203_174204133 (3).jpg"></p>
+    </body>
+
+    <script>
+        function LosEventos() {
+            var elemento1=document.getElementsByTagName("p")[0];  
+            var elemento2=document.getElementsByTagName("img")[0];
+
+            elemento1.addEventListener("click",Aviso1,true);        //AQUI, TENEMOS 2 EVENTOS QUE, POR LA UBICACIÓN (PADRE E HIJA) DE LAS ETQIEUTAS, SE DESENCADENAN AL MISMO TIEMPO SI SE EJECUTA EL EVENTO DE LA HIJA.
+            elemento2.addEventListener("click",Aviso2,false);       //ENTONCES, CON LA VARAIBLE "true" INDICAMOS QUE ESE EVENTO EN PARTICULAR SE DESENCADENARÁ PRIMERO(EN ESTE CASO EL DEL PADRE).
+            
+        }
+        function Aviso1() {
+            alert("Se trata del parrafo")
+            
+        }
+
+        function Aviso2() {
+            alert("Se trata de la imagen")
+            
+        }
+
+        window.onload=LosEventos;
+    </script>
+
+
+
+</html>

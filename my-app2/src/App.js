@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Bootstrap from './components/bootstrap';
+import Bulma from './components/bulma';
+import ConceptosRouter from './components/conceptosRouter';
+import ConceptosRouter2 from './components/conceptosRouter2';
+import Usuario from './pages/usuario';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Frameworks CSS con React</h1>
+      {/* <Bootstrap></Bootstrap> */}             {/**YA CON REACT ROUTER ESTA PARTE PODRÍA SER LA CABECERA Y HASTA ABAJO EL COMPONENTE DEL PIE DE PAGINA */}
+      {/* <Bulma></Bulma>
+      <h1>React Router</h1>
+      <a href="https://reactrouter.com/home"  target="_blank" rel="noreferrer" >Documentacion</a>
+      <hr></hr> */}
+     {/*  <ConceptosRouter></ConceptosRouter> */}   {/**ESTE ES ES UN COMPONENTE QUE FUNCIONA COMO ROUTER */}
+      <ConceptosRouter2></ConceptosRouter2>
     </div>
   );
 }

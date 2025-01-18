@@ -33,7 +33,7 @@ export function useFetch(url) {
                         
                         let data=await res.json();
 
-                        //setError({err:false});
+                        setError({err:false});
                         setData(data);
                         setPending(false);
 
@@ -50,6 +50,7 @@ export function useFetch(url) {
     
     return{error,data,pending}; //ESTO ES A: 
     //return{error:error,data:data,pending:pending};  //ES LO MISMO QUE LA LINEA ANTERIOR
+    
     
     
 }

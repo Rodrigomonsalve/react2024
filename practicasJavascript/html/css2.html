@@ -1,0 +1,73 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        
+        <title>Pagina de estudio</title> 
+
+        
+
+        <!--<link rel="stylesheet" href="css.css"/> -->
+
+        <!--OTRAS FORMAS DE DECLRAR ESTILOS-->
+        <style>
+            /*SELECTORES:*/
+            p[name="misElementos"]{                /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE TENGAN EL atributo name="misElementos"*/
+                background-color:cornflowerblue
+            }
+
+            p[name^="tus"]{                         /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE EN EL atributo name="" COMIENCE CON tus...*/
+                background-color:burlywood;
+            }
+
+            p[name$="la"]{                         /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE EN EL atributo name="" TERMINE CON ...la*/
+                background-color:burlywood;
+            }
+
+            p[name*="tiq"]{                     /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE EN EL atributo name="" TENGA EN ALGUNA PARTE ...tiq...*/
+                background-color:violet;
+            }
+
+
+            /*PSEUDOCLASES:*/
+            p:nth-child(2){                     /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE SEAN HIJAS DE CUALQUIER ETIQUETA, SÓLO EN LA SEGUNDA POSICION*/
+                color:crimson
+            }
+
+            p:first-child{                     /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE SEAN HIJAS DE CUALQUIER ETIQUETA, SÓLO EN LA PRIMERA POSICION*/
+                color:crimson
+            }
+
+            p:last-child{                       /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE SEAN HIJAS DE CUALQUIER ETIQUETA, SÓLO EN LA ULTIMA POSICION*/
+                color:crimson
+            }
+
+            p:only-child{                       /*SE VA A APLICAR A TODAS LAS ETIQUETAS <p> QUE SEAN HIJAS ÚNICAS DE CUALQUIER ETIQUETA*/
+                color:crimson
+            }
+        </style>
+
+        
+    </head>
+    
+    <body >
+        <p name="misElementos">Hola</p>
+        <p name="misElementos">Adios</p>
+        <p name="tusElementos">Hola</p>
+        <p name="lola">Hola</p>
+        <p name="etiqueta">Hola</p>
+
+        <section>
+            <p>BYE</p>
+            <p>Cuidate</p>
+        </section>
+
+    </body>
+
+
+
+</html>

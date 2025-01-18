@@ -33,10 +33,33 @@
 
        const arreglo=[1,2,3];
        const arreglo2=[4,5,6];
+       const objeto1={
+        name:"Rodrigo",
+        age:35
+       }
+
+       const objeto2={
+        lastName:"Monsalve",
+        address:"Calle 1"
+       }
 
        const arregloSpread=[...arreglo,...arreglo2];
+       const arregloSpread2=[...arreglo,arreglo2];
+       const arregloSpread3=[arreglo,...arreglo2];
+
+       const objetoSpread={...objeto1,...objeto2};
+       const objetoSpread2={...objeto1,
+        [objeto1.name1]:"Carlos",                 //SE ESTA CREANDO OTRO CAMPO DENTRO DEL objeto1. EN ESTE CASO Rodrigo:"Carlos". [ objeto1.name] es una propiedad dinamica (valor computado). Puede cambiar.Por eso se usa corchetes. Si no usamos corchetes, luego entonces, estaríamos accediendo al valor de objeto1.name, lo cual no tiene sentido. Importante para React.
+        [cualquiercosa]:"casa"
+       };
+       
 
        console.log(arregloSpread);
+       console.log(arregloSpread2);
+       console.log(arregloSpread3);
+
+       console.log(objetoSpread);
+       console.log(objetoSpread2);
        
 
        

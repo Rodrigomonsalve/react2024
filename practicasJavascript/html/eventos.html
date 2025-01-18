@@ -1,0 +1,83 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        
+        <title>Eventos</title> 
+
+
+        <link rel="stylesheet" href="css.css"/> 
+
+        
+    </head>
+
+    <!--HAY 3 FORMAS DE MANEJAR EVENTOS:-->
+    <!--1)En linea--><!--Es la práctica menos recomendada-->
+    <!--2)Como propiedades-->
+    <!--3)Con addEventListener()--><!--Es la práctica mas recomendada-->
+    
+    <body >
+        <!--<p><img src="../Imagenes/IMG_20221203_174204133 (3).jpg" onclick="Foto()"/></p>-->      <!--1)EN LINEA -->
+        <p><img src="../Imagenes/IMG_20221203_174204133 (3).jpg"/> </p>
+        <p><img src="../Imagenes/WIN_20210715_02_21_58_Pro.jpg"/> </p>
+        
+        <script>
+
+            var imagen=new Array();
+
+            function Foto() {
+                alert("Rodrigoss")
+                
+            }
+
+            /*function Foto2() {                                                    //2)MEDIANTE PROPIEDADES
+                document.getElementsByTagName("img")[0].onclick=Foto;                
+            }*/
+
+            function Foto3() { 
+                                                                     //3)MEDIANTE addEventListener:(evento,funcion a desencadenar,eventos anidados).
+                                                                     //Algo importante de addEvenListener es que, aunque no se ejecute la funcion que igresa como parametro, addEventListener ¡¡¡SI SE EJECUTA!!!. Lo que hace es quedar a la espera de que se ejecute el evento: registra el evento. Importante para React
+                for(var i=0;i<2;i++){                                  //Con este ejemplo se puede ver la utilidad de addEventListener
+
+                    imagen[i]=document.getElementsByTagName("img")[i];
+                    console.log(imagen[i]);
+
+                }
+               //imagen=document.getElementsByTagName("img")[0];
+
+               //EL METODO addEventListener SE APLICA A LA VARIABLE QUE TIENE LA ETIQUETA
+
+               imagen[0].addEventListener("mouseover",function(){imagen[0].width=225;imagen[0].height=225;},false);  
+               imagen[0].addEventListener("mouseout",function(){imagen[0].width=200;imagen[0].height=200;},false);  
+               imagen[0].addEventListener("click",Foto,false);     
+               
+               imagen[1].addEventListener("mouseover",function(){imagen[1].width=225;imagen[1].height=225;},false);  
+               imagen[1].addEventListener("mouseout",function(){imagen[1].width=200;imagen[1].height=200;},false);  
+               imagen[1].addEventListener("click",Foto,false); 
+            }
+
+           
+
+            /*function Crecer(params) {
+                imagen.width=225;
+                imagen.height=225;
+            }
+
+            function Cambiar(params) {
+                imagen.width=200;
+                imagen.height=200;
+            }*/
+
+            //window.onload=Foto3;
+            window.addEventListener("load",Foto3,false);
+
+        </script>
+    </body>
+
+
+
+</html>

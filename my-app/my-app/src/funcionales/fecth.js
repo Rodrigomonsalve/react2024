@@ -19,7 +19,7 @@ export default function FetchConFuncion(params) {
         ()=>{
             let url="https://pokeapi.co/api/v2/pokemon";
         fetch(url)                                      //Siempre la función fetch va a servir para realizar una conexión a una URL.
-        .then((res)=>res.json())                        //Después el resultado,en caso de que la conexion haya sido exitosa, lo conviertes a  json. Fecth es una promesa y por eso usa el método then
+        .then((res)=>res.json())                        //Después el resultado,en caso de que la conexion haya sido exitosa, lo conviertes de json a un objeto en Jvascript. Fecth es una promesa y por eso usa el método then
         .then((json)=>{         //¡¡¡El valor de json ES ÚNICO POR FUNCION!!!                 //Es recomendable ir imprimiendo en consola los resultados que vayamos obtenniendo para saber qué consultar
             console.log(json);
             json.results.forEach((el)=>{                //Después, si son muchos los resultados a imprimir en pantalla, tendriamos que iterarlos

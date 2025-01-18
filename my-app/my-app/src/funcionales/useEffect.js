@@ -8,7 +8,7 @@ export default function UsoDeUseEffect(){
     //SU FINALIDAD ES EJECUTAR CÓDIGO EN LOS DIFERENTES CICLOS DE VIDA DEL COMPONENTE FUNCIONAL.
 
     //SE EJECUTA AUTOMÁTICAMENTE:
-    //Siempre se ejecuta al mennos una vez. Fase de montaje.
+    //Siempre se ejecuta al menos una vez. Fase de montaje.
     //1)Después de cada renderización. Si no se pasa el segundo valor(se omite) que ingresa por los parametros de useEffect.
     //2)Sólo una vez. Si se pasa un array vacío por el segundo valor que ingresa por los parametros de useEffect.
     //3)Cada que cambie el valor de la dependencia(es el segundo valor que ingresa por los parametros de useEffect:[scrollY])

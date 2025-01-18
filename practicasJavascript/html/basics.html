@@ -1,0 +1,112 @@
+<!DOCTYPE html><!--INNDICA QUE ES VERSION 5 DE HTML-->
+<html lang="es">
+    <head>
+
+        <!--meta SÓLO FUNCIONA PARA DAR INFORMACION A LOS NAVEGADORES. AYUDA AL SEO-->
+        <meta charset="iso-85591-1"/>
+        <meta name="description" content="Pagina de practica"/> 
+        <meta name="keywords" content="html5, css3"/>
+
+        <!--TITULO DE LA PESTAÑA-->
+        <title>Pagina de estudio</title> <!--SE TOMA COMO FRASE PARA QUE LA PAGINA SE POSICIONE CORRECTAMENTE EN  INTERNET.DEBE SER CORTA Y COHERENTE-->
+
+        <link rel="stylesheet" href="mihojadeestilos.css"/>
+
+
+    </head>
+    
+    <body>
+    <!--DIVISIÓN DE LAS SECCIONES DE UNA APLICACIÓN:-->
+    <!--ANTES SE USABA LA ETIQUETA <table>. SE BASABA TODA LA PAGINA EN CELDAS-->
+    <!--DESPUÉS APARECIÓ LA ETIQUETA <div> QUE SUSTITIYÓ A <table> EN LA PRÁCTICA-->
+    <!--HTML5 AHORA INCLUYÓ NUEVAS ETIQUETAS: header, nav, aside, section, footer(CADA UNA SE ENFOCA EN SU PROPIA SECCION DEL BODY), PUES <diV> NO ES RESPONSIVO-->
+    <!--AYUDAN AL DISEÑO RESPONSIVO EN DIFERENTES TIPOS DE DISPOSITIVOS Y AL SEO. NO IMPORTA QUE NO VEAS REFELJADAS LAS ETIQUETAS EN UNA COMPUTADORA-->
+
+        <!--TITULO DE LA PAGINA O SECCION CORRESPONDIENTE-->
+        <header>
+            <h1>Esta es la cabecera</h1> <!--H1 A H6. SE USA PARA TÍTULOS Y SUS SUBTITULOS. SIEMPRE SE PONEN EN NEGRITAS. AYUDAN AL SEO. SÓLO PUEDE HABER UN H1 POR PAGINA-->
+        </header>
+
+        <!--SIRVEN PARA MENUS SUPERIORES:-->
+        <nav>
+            <ol>
+                <li>Opcion1</li>
+                <li>Opcion2</li>
+                <li>Opcion3</li>
+                <li>Opcion4</li>
+            </ol>
+        </nav>
+
+        <!--BARRA O MENU LATERAL:-->
+        <aside>
+            <blockquote>Primer elemento del menu lateral</blockquote>
+            <blockquote>Segundo elemento del menu lateral</blockquote>
+        </aside>
+
+        <!--CONTENIDO PRINCIPAL(<section>)-->
+        <!--AQUI PUEDE VERSE LA ESRUCTURA DE ETIQUETAS PADRES, HIJAS Y HERMANAS-->
+        <section>
+            <article>                               <!--<article> sirve para agrupar un conjuto de parrafos o información en comun-->
+                <header>                            
+                    <hgroup>                        <!--<hgroup> sirve para agrupar etiquetas h-->
+                        <h2>Titulo de la noticia 1</h2>
+                        <h3>Subitulo de la noticia 1</h3>
+                    </hgroup>
+                </header>
+                <figure>                               <!--<figure> sirve para agrupar imagenes-->
+                    <img src="../Imagenes/IMG_20221203_174204133 (3).jpg"/><!--SÓLO SE ADMITEN jpg, gif, png--> <!--PARA AGREGAR IMAGENES-->
+                    <figcaption>
+                        Mi foto                          <!--PARA PONER UNA LEYENDA A PIE DE FOTO-->
+                    </figcaption>
+                </figure>                                   <!--LAS HERRAMIETAS DE MARCADO, FUERA DE LO VISUAL PORQUE PARA ESO SIRVE CSS, SIRVEN PARA QUE LOS NEVEGADORES Y BUSCADORES LE DEN MAS IMPORTACIA A ESA PARTE EN ESPECÍFICO(AYUDA AL SEO):-->
+                <p><mark>Noticia 1</mark></p>                            <!--<mark> SIRVE PARA MARCAR CON AMARILLO ESA PARTE-->
+                <p><em>Contenido de la Noticia 1</em></p>                <!--<em> SIRVE PARA PONER EN  CURSIVA ESA PARTE. SUTITIYE A <i>-->
+                <p><strong> Fin de la Noticia 1</strong></p>             <!--<strong> SIRVE PARA PONER EN  NEGRITAS ESA PARTE.-->
+                <footer>
+                   <p><small>Derechos reservados</small></p>             <!--<small> SIRVE PARA PONER EN MAS PEQUEÑA ESA PARTE. FUERA DE LO VISUAL, SIRVE PARA INDICAR QUE ES UN TEXTO CON SENTIDO JURIDICO.-->
+                </footer>
+            </article>
+
+            </article>
+                 <header>
+                    <hgroup>
+                        <h2><cite>Titulo de la noticia </cite></h2>      <!--<cite> SIRVE PARA INDICAR QUE ES UNA CITA-->
+                        <h3>Subitulo de la noticia 1</h3>
+                        <h3><address>Contacto:55783883993</address></h3>    <!--<address> SIRVE PARA INDICAR QUE ES INFORMACIÓN DE CONTACTO-->
+                        <time datetime="2025/01/05" pubtime>Noticia publicada el 05/01/2024</time> <!--<time> SIRVE PARA INDICAR QUE ES INFORMACIÓN DE FECHA-->
+                    </hgroup>
+                </header>
+                <p>Noticia 2</p>
+                <p>Contenido de la Noticia 2</p>
+                <p>Fin de la Noticia 2</p>
+                <footer>
+                    <p>Comentarios</p>
+                 </footer>
+            </article>
+
+            </article>
+                <header>
+                    <hgroup>
+                        <h2>Titulo de la noticia 3</h2>
+                        <h3>Subitulo de la noticia 3</h3>
+                    </hgroup>
+                </header>
+                <p>Noticia 3</p>
+                <p>Contenido de la Noticia 3</p>
+                <p>Fin de la Noticia 3</p>
+                <footer>
+                    <p>Comentarios</p>
+                 </footer>
+             </article>
+        </section>
+
+        <!--LO QUE VA ABAJO DE LA PAGINA O SECCION CORRESPONDIENTE-->
+        <footer>
+            Derechos reservados
+        </footer>
+
+    </body>
+
+
+
+</html>

@@ -15,9 +15,10 @@ function Boton(props) {
 export default class EventosPersonalizados extends Component{
 
     handleClick=(e, mensaje)=>{   //AL EJECUTARSE EL EVENTO, ESTE PUEDE PASAR A LA FUNCION. EN ESTE CASO COMO e.
+        //e.target es en realidad un objeto que tiene diversas propiedades: name, value, etc. Por lo tanto, sería posible destructurarlo.
         console.log(e);                     //SyntheticBaseEvent {_reactName: 'onClick', _targetInst: null, type: 'click', nativeEvent: PointerEvent, target: button, …}
         console.log(e.target);              //<button>Boton creado como componente</button>
-        console.log(e.target.value);        //SIRVE PARA FORMULARIOS
+        console.log(e.target.value);        //SIRVE PARA FORMULARIOS    //value es el atributo value de la etiqueta. De esta forma, puedes acceder a los valores de las demas etiquetas(e.target.type, e.target.name,etc)
         console.log(e.target.textContent);  //Boton creado como componente
         console.log(e.nativeEvent);         //PointerEvent {isTrusted: true, pointerId: 2, width: 1, height: 1, pressure: 0, …}
         console.log(e.nativeEvent.target);  //<button>Boton creado como componente</button>
