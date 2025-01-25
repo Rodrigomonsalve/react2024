@@ -19,7 +19,7 @@ let auth;
   } */
 
 
-    export const RutaPrivada = ({component:Component, ...rest}) => {   //Aquí estamos destructurando las props, pero para poder trabajar sólo con el atributo "component". Normalmente sería: {component, ...rest}. Sin  embargo, no podemos trabajar con "component", porque no cumple el requisito para ser un componente, pues no empieza con mayuscula. Por esta razón lo transformamos a "Component" (:Component).
+    export const RutaPrivada = ({component:Component, ...rest}) => {   //Aquí estamos destructurando las props, pero para poder trabajar sólo con el atributo "component". Normalmente sería: {component, ...rest}.(Recordar operador rest) Sin  embargo, no podemos trabajar con "component", porque no cumple el requisito para ser un componente, pues no empieza con mayuscula. Por esta razón lo transformamos a "Component" (:Component).
         return (
         <Route {...rest}>{auth ? <Component/>:<Redirect to="/login"></Redirect>}</Route> //En este ejemplo, <Component/> es igual a <Dashboard/>  //Es simplemente un renderizado condicional.   //auth hace las veces de un logueo exitoso o no exitoso. Hay que modificar la variable, para poder probar.
     )

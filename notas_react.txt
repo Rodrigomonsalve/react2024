@@ -16,6 +16,9 @@ Para Create-React-App debes ejecutar los siguientes comandos:
 "C:\Program Files\nodejs\npm" install --save-dev ajv@^7
 
 npm start   --> Para ejecutar la aplicación
+npm install react-router-dom@5.2.0 -> Para instalar una version especifica de alguna dependencia. Usas el comando normal + @ +  version.
+npm uninstall react-router react-router-dom -> Para desisnstalar alguna dependencia.
+
 
 
 Los comandos que debes ejecutar para ejecutar, construir la aplicación y otros, están dentro del package.json. Por ejemplo, en el siguiente caso, para ejecutar la aplicación sería "npm run develop" o "npm run start".

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch,BrowserRouter as Router, Redirect } from 'react-router-dom';
+import { Route, Switch,BrowserRouter as Router, Redirect, HashRouter,Link } from 'react-router-dom';
 import Contacto from '../pages/contacto';
 import Acerca from '../pages/acerca';
 import Home from '../pages/home';
@@ -13,11 +13,28 @@ import { Dashboard } from '../pages/dashboard';
 import { RutaPrivada } from './rutaPrivada';
 
 
-
+//LO QUE HACEN ROUTE(BrowserRouter O HashRouter) EN CONJUNTO CON LINK, ES ¡SÓLO RENDERIZAR EL COMPONENTE REQUERIDO!. ¡NO NECESITA QUE EXISTA ALGUNA CARPETA DENTRO DEL SERVIDOR QUE CONTENGA LA INFORMACION REQUERIDA! POR EJEMPLO, LA CARPETA /contactos. POR ESTA RAZÓN, SI QUEREMOS VISITAR EN PRODUCCIÓN(EL PROBLEMA SE PRESENTA EN PRODUCCIÓN) DIRECTAMENTE https://hostname/contactos, SI LA CARPETA NO EXISTE, NUNCA SE ENCONTRARÁ ESA RUTA, PORQUE EN REALIDAD NO EXISTE. REALMENTE SON RUTAS FALSAS.
+//DE ACUERDO A LO ANTERIOR, SI LA RUTA EN EL SERVIDOR SÍ EXISTE, ENTONCES DEBES USAR BrowserRouter. SI NO EXISTE(TU APLICACIÓN SE BASA EN MERAS PETICIONES A APIS) ENTONCES USA HashRouter. CON HASHROUTER LA RUTA SE VERÍA ASÍ: https://hostname/#/contactos (ASI SE LE INDICA QUE /contactos NO EXISTE EN EL SERVIDOR)
 const ConceptosRouter2 = () => {
   return (
     <div>
+        {/**RUTEO CON HashRouter*/}
+        <h3>Hash Router</h3>
+        <HashRouter>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/acerca">Acerca</Link>
+                <Link to="/contacto">Contacto</Link>            
+            </nav>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/acerca" component={Acerca} />
+                <Route exact path="/contacto" component={Contacto} />
+                <Route path="*" component={Error404} />  
+            </Switch>
+        </HashRouter>
        
+       {/**RUTEO CON BrowserRouter*/}
         <Router>
             <Menu></Menu>
             <Switch>             
